@@ -1,2 +1,2 @@
 # Whac-A-Mole
-Course Project
+Frontend Course Project by Max & Luca
