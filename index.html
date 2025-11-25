@@ -1,49 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Whac-A-Mole</title>
 </head>
-<body>
-<div class="mole">
-    <img class="wgs" src="media/wgs.png" alt="">
-    <img class="mole-head" src="media/mole-head.png" alt="">
-    <img class="mole-hill" src="media/mole-hill.png" alt="">
-</div>
-<section id="game" class="hidden">
-  <button id="start-btn">Starta spelet</button>
-  <div id="grid">
-    <!-- 6 rutor -->
-    <img class="mole" src="media/mole-down.png" data-index="0">
-    <img class="mole" src="media/mole-down.png" data-index="1">
-    <img class="mole" src="media/mole-down.png" data-index="2">
-    <img class="mole" src="media/mole-down.png" data-index="3">
-    <img class="mole" src="media/mole-down.png" data-index="4">
-    <img class="mole" src="media/mole-down.png" data-index="5">
-  </div>
-</section>
 
-    <nav id="nav">
-        <!-- menu goes here -->
-    </nav>
+<body>
+
+    <!-- Example mole sprite -->
+    <div class="mole">
+        <img class="wgs" src="media/wgs.png" alt="">
+        <img class="mole-head" src="media/mole-head.png" alt="">
+        <img class="mole-hill" src="media/mole-hill.png" alt="">
+    </div>
+
+    <nav id="nav"></nav>
 
     <section id="profile">
-        <!-- form for saving user name goes here -->
-
+        <!-- user profile form goes here -->
     </section>
 
-    <section id="game">
-        <!-- the actual game goes here -->
-
+    <section id="game" class="hidden">
+        <button id="start-btn">Starta spelet</button>
+        <div id="grid">
+            <img class="mole" src="media/mole-hill.png" data-index="0">
+            <img class="mole" src="media/mole-hill.png" data-index="1">
+            <img class="mole" src="media/mole-hill.png" data-index="2">
+            <img class="mole" src="media/mole-hill.png" data-index="3">
+            <img class="mole" src="media/mole-hill.png" data-index="4">
+            <img class="mole" src="media/mole-hill.png" data-index="5">
+        </div>
     </section>
 
-    <section id="high-score">
-        <!-- list of high scores goes here -->
+    <section id="high-score" class="hidden"></section>
 
-    </section>
-    
     <script src="./src/main.js"></script>
 </body>
+
 </html>
