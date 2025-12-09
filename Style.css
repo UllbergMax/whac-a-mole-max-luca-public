@@ -1,47 +1,253 @@
-.wgs{
-    height: 125px;
+* {
+    box-sizing: border-box;
+    image-rendering: pixelated;
+}
+
+/* Göm-sektion */
+.hidden {
+    display: none;
+}
+
+/* Main page */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    background: url("media/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    color: white;
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+
+#game-panel {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 60px 20px;
+}
+
+/* Title */
+
+h1 {
+    margin: 0 0 15px 0;
+    font-size: 42px;
+    text-shadow: 3px 3px 0 black;
+}
+
+/* Meny */
+
+#main-nav {
+    margin-bottom: 15px;
+}
+
+#main-nav button {
+    margin: 0 6px 10px 6px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid white;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    cursor: pointer;
+}
+
+#main-nav button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Top row: (i gamesektionen) */
+
+#top-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Player section */
+
+#player-section {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    display: inline-block;
+}
+
+#player-section input {
+    padding: 4px 6px;
+    margin: 0 5px;
+}
+
+/* Score + time + buttons */
+
+#info {
+    background: rgba(0,0,0,0.9);
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    font-size: 19px;
+}
+
+/* Buttons */
+
+button {
+    margin: 4px 6px;
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Message text */
+
+#message {
+    margin: 10px 0;
+    font-size: 17px;
+    text-shadow: 1px 1px 0 black;
+}
+
+/* Bottom row: board, settings */
+
+#bottom-row {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0px;
+}
+
+/* Highscores (egen sida) */
+
+#high-score {
+    width: 280px;
+    background: rgba(0,0,0,0.9);
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    margin: 0 auto;
+}
+
+#high-score h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+#highscores {
+    list-style: decimal;
+    padding-left: 22px;
+    margin: 5px 0 0 0;
+}
+
+/* Settings */
+
+#settings {
+    width: 280px;
+    background: rgba(0,0,0,0.9);
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+#settings h2 {
+    margin: 0 0 6px 0;
+    font-size: 19px;
+}
+
+/* Handedness buttons */
+
+#hand-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.hand-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hand-btn:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.hand-btn.active {
+    border-color: gold;
+    background: rgba(255,215,0,0.2);
+}
+
+/* Game board window */
+
+#game-board {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-left: 270px;
+    padding: 18px;
+    background: rgba(0,0,0,0.9);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.9);
+
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-gap: 12px;
+}
+
+/* Hole */
+
+.tile {
     width: 150px;
-    position: absolute;
+    height: 150px;
+    background: url("media/mole-hill.png") center/contain no-repeat;
+    position: relative;
 }
 
+/* Mole */
 
-.mole-head{
-    height: 125px;
+.mole {
+    width: 120px;
+    height: 120px;
+    background: url("media/mole-head.png") center/contain no-repeat;
     position: absolute;
-    width: 150px;
+    top: 18px;
+    left: 15px;
 }
 
+/* Visa hammaren endast när musen är inne i gameboarden */
 
-.mole-hill{
-    height: 125px;
-    position: absolute;
-    width: 100px;
-    bottom: 80%;
+#game-board.right-handed,
+#game-board.right-handed * {
+    cursor: url("media/hammer1.png"), auto;
 }
 
-
-
-
-.sb {
-  background-color: cornflowerblue;
-  border-bottom: 1px solid #645DED;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  color: white;
-  display: flex;
-  font-size: 30px;
-  margin-bottom: 50px;
-  padding: 10px 20px;
-} 
-
-.sb__mole-counter {
-  flex: 1 0 0;
-  text-align: right;
-} 
-
-.sb__score-holder {
-  flex: 1 0 0;
-} 
-
-.sb__game-over--hidden {
-  display: none;
+#game-board.left-handed,
+#game-board.left-handed * {
+    cursor: url("media/hammer.png"), auto;
 }

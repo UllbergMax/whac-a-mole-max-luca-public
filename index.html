@@ -3,41 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Whac-A-Mole</title>
+    <title>Retro Whack-A-Mole</title>
+    <link rel="stylesheet" href="Style.css">
 </head>
 
 <body>
 
-    <!-- Example mole sprite -->
-    <div class="mole">
-        <img class="wgs" src="media/wgs.png" alt="">
-        <img class="mole-head" src="media/mole-head.png" alt="">
-        <img class="mole-hill" src="media/mole-hill.png" alt="">
+    <div id="game-panel">
+        <h1>Retro Whack-A-Mole</h1>
+        <nav id="main-nav"></nav>
+        <section id="profile">
+            <div id="player-section">
+                <label for="playerName">Name:</label>
+                <input id="playerName" type="text" placeholder="Write your name">
+                <button id="setPlayerBtn">Set player</button>
+                <p>Current player: <span id="current-player">Guest</span></p>
+            </div>
+        </section>
+
+        <section id="game">
+            <div id="top-row">
+                <div id="info">
+                    <div>
+                        Score: <span id="score">0</span> |
+                        Time: <span id="time">15</span>s
+                    </div>
+                    <div id="controls">
+                        <button id="startBtn">Start</button>
+                        <button id="resetBtn">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <p id="message"></p>
+            <div id="bottom-row">
+                <div id="game-board"></div>
+
+                <section id="settings">
+                    <h2>Settings</h2>
+                    <p>Right or left handed?</p>
+
+                    <div id="hand-buttons">
+                        <button id="rightHandBtn" class="hand-btn">Right-handed</button>
+                        <button id="leftHandBtn" class="hand-btn">Left-handed</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section id="high-score">
+            <h2>Highscores</h2>
+            <ol id="highscores"></ol>
+        </section>
     </div>
-
-    <nav id="nav"></nav>
-
-    <section id="profile">
-        <!-- user profile form goes here -->
-    </section>
-
-    <section id="game" class="hidden">
-        <button id="start-btn">Starta spelet</button>
-        <div id="grid">
-            <img class="mole" src="media/mole-hill.png" data-index="0">
-            <img class="mole" src="media/mole-hill.png" data-index="1">
-            <img class="mole" src="media/mole-hill.png" data-index="2">
-            <img class="mole" src="media/mole-hill.png" data-index="3">
-            <img class="mole" src="media/mole-hill.png" data-index="4">
-            <img class="mole" src="media/mole-hill.png" data-index="5">
-        </div>
-    </section>
-
-    <section id="high-score" class="hidden"></section>
-
-    <script src="./src/main.js"></script>
+    <script src="src/game.js"></script>
 </body>
 
 </html>
